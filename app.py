@@ -1,4 +1,11 @@
-print("Hello print!")
-# We will learn
-# This is another main example of the code
-print("Shubham is also giving as same as you")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/', methods=["GET", "POST"])
+def home():
+    return "Hello world!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
